@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Étoile — 5-Star Dining</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+        crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --brand:#0d1321;           /* deep navy */
+      --accent:#d4af37;          /* “gold” */
+      --paper:#fffdf8;           /* warm white */
+    }
+    body{ background:var(--paper); }
+    .navbar { background: var(--paper); }
+    .brand-mark { color: var(--brand); letter-spacing:.04em; }
+    .btn-reserve { background: var(--accent); border-color: var(--accent); color:#111; }
+    .btn-reserve:hover { filter: brightness(.95); color:#111; }
+
+    /* Offcanvas header tweak for elegance */
+    .offcanvas-title { letter-spacing:.08em; font-weight:700; color:var(--brand); }
+    .list-group-item { border:0; font-size:1.1rem; padding:.75rem 0; }
+    .list-group-item .bi { width:1.25rem; }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1529042410759-befb1204b468?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+      min-height: 52vh;
+      position: relative;
+    }
+    .hero::after{
+      content:"";
+      position:absolute;inset:0;
+      background: linear-gradient(180deg, rgba(13,19,33,.45), rgba(13,19,33,.55));
+    }
+    .hero-content{
+      position:relative; z-index:2; color:#fff; padding:4rem 0;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar border-bottom sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold brand-mark" href="#">
+      Étoile
+    </a>
+
+    <div class="d-flex align-items-center gap-2">
+      <a class="btn btn-sm btn-reserve d-none d-sm-inline-flex" href="#reservations">
+        <i class="bi bi-calendar2-check me-1"></i> Reserve
+      </a>
+      <button class="navbar-toggler border-0" type="button"
+              data-bs-toggle="offcanvas" data-bs-target="#mobileMenu"
+              aria-controls="mobileMenu" aria-label="Open menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+
+    <ul class="navbar-nav ms-auto d-none d-lg-flex align-items-center gap-3">
+      <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+      <li class="nav-item"><a class="nav-link" href="#chef">Chef</a></li>
+      <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+      <li class="nav-item"><a class="nav-link" href="#location">Location</a></li>
+      <li class="nav-item">
+        <a class="btn btn-reserve" href="#reservations"><i class="bi bi-calendar2-check me-1"></i>Reserve</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="mobileMenuLabel">ÉTOILE</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div class="d-grid gap-2 mb-3">
+      <a class="btn btn-reserve btn-lg" href="#reservations">
+        <i class="bi bi-calendar2-check me-2"></i>Reserve a Table
+      </a>
+      <a class="btn btn-outline-dark btn-lg" href="tel:+15175551234">
+        <i class="bi bi-telephone me-2"></i>Call Us
+      </a>
+    </div>
+
+    <hr class="my-3">
+
+    <div class="list-group list-group-flush">
+      <a class="list-group-item" href="#menu"><i class="bi bi-book me-2"></i> Menu</a>
+      <a class="list-group-item" href="#chef"><i class="bi bi-award me-2"></i> Chef’s Tasting</a>
+      <a class="list-group-item" href="#wine"><i class="bi bi-cup-straw me-2"></i> Wine Pairings</a>
+      <a class="list-group-item" href="#gallery"><i class="bi bi-images me-2"></i> Gallery</a>
+      <a class="list-group-item" href="#private"><i class="bi bi-people me-2"></i> Private Dining</a>
+      <a class="list-group-item" href="#location"><i class="bi bi-geo-alt me-2"></i> Location & Hours</a>
+      <a class="list-group-item" href="#contact"><i class="bi bi-envelope me-2"></i> Contact</a>
+    </div>
+
+    <hr class="my-3">
+
+    <div class="d-flex gap-3 fs-4">
+      <a class="link-dark" href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+      <a class="link-dark" href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+      <a class="link-dark" href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+    </div>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="container hero-content">
+    <h1 class="display-4 fw-bold">Modern French cuisine, elegantly served.</h1>
+    <p class="lead">Michelin-level technique, seasonal ingredients, and a refined dining room.</p>
+    <a class="btn btn-reserve btn-lg" href="#reservations">Reserve Now</a>
+  </div>
+</header>
+
+<main class="container my-5">
+  <section id="menu" class="py-4 border-bottom">
+    <h2>Signature Menu</h2>
+    <p>Preview a few courses and pairings.</p>
+  </section>
+
+  <section id="chef" class="py-4 border-bottom">
+    <h2>The Chef</h2>
+    <p>Tradition meets innovation.</p>
+  </section>
+
+  <section id="gallery" class="py-4 border-bottom">
+    <h2>Gallery</h2>
+    <p>Ambience & plating.</p>
+  </section>
+
+  <section id="location" class="py-4 border-bottom">
+    <h2>Location & Hours</h2>
+    <p>123 Grand Ave, Detroit, MI — 5pm–10pm</p>
+  </section>
+
+  <section id="reservations" class="py-4">
+    <h2>Reservations</h2>
+    <p>OpenTable widget can go here.</p>
+    <a class="btn btn-reserve btn-lg" href="#">Book a Table</a>
+  </section>
+</main>
+
+<footer class="py-4 border-top">
+  <div class="container text-center small">&copy; 2025 Étoile</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+</html>
